@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root :to => 'homes#top'
+    get   'users/information'       =>  'users#show',   as: 'user'
+    get   'users/information/edit', to: 'users#edit',   as: 'edit_user'
+    patch 'users/information',      to: 'users#update', as: 'update_user'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
