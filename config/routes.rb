@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'homes#top'
+    resources :animals,       only: %i(index show new create edit update)
+    resources :types,      only: %i(index create edit update)
   end
 
   scope module: :public do
